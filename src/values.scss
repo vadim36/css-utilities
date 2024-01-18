@@ -102,6 +102,8 @@ $util-values: (
     '75': .75,
     '100': 1
   ),
+  'bordered': 
+    ( var(--primary-border-size-point) solid var(--primary-color)),
   'border-color': (
     'primary': var(--hsl-primary-color),
     'secondary': var(--hsl-secondary-color),

@@ -1,0 +1,5 @@
+@use '../values' as *;
+
+.bordered {
+  border: map-get($util-values, 'bordered');
+}
