@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --h-primary: 0;
+  --h-accent: 220;
+  --h-secondary-accent: 45;
+  --h-success: 120;
+
+  --s-50: 50%;
+  --s-75: 75%;
+  --s-100: 100%;
+
+  --l-0: 0%;
+  --l-50: 50%;
+  --l-55: 55%;
+  --l-100: 100;
+
+  --hsl-primary-color: var(--h-primary), var(--s-100), var(--l-100);
+  --hsl-secondary-color: var(--h-primary), var(--s-100), var(--l-0);
+  --hsl-accent-color: var(--h-accent), var(--s-50), var(--l-50);
+  --hsl-secondary-accent-color: var(--h-secondary-accent), var(--s-100), var(--l-50);
+  --hsl-success-color: var(--h-success), var(--s-50), var(--l-50);
+  --hsl-danger-color: var(--h-primary), var(--s-75), var(--l-55);
+
+  --primary-color: hsl( var(--h-primary), var(--s-100), var(--l-100));
+  --secondary-color: hsl( var(--h-primary), var(--s-100), var(--l-0));
+  --accent-color: hsl( var(--h-accent), var(--s-50), var(--l-50));
+  --secondary-accent-color: hsl( var(--h-secondary-accent), var(--s-100), var(--l-50));
+  --success-color: hsl( var(--h-success), var(--s-50), var(--l-50));
+  --danger-color: hsl( var(--h-primary), var(--s-75), var(--l-55));
+
+  --gradient-deg: to bottom right;
+  --primary-border-size-point: 1px;
+  --primary-border-radius-point: 1rem;
+  --primary-underline-offset-point: 1px;
+  --primary-shadow-point: 1rem;
+  --primary-font-size-point: 1rem;
+  --primary-margin-point: 1rem;
+  --primary-paddint-point: 1rem;
+}
+
+$util-values: (
+  'hsl-colors': (
+    'primary': var(--hsl-primary-color),
+    'secondary': var(--hsl-secondary-color),
+    'accent': var(--hsl-accent-color),
+    'secondary-accent': var(--hsl-secondary-accent-color),
+    'success': var(--hsl-success-color),
+    'danger': var(--hsl-danger-color)
+  ),
+  'bg': ( 
+    'primary': var(--hsl-primary-color),
+    'secondary': var(--hsl-secondary-color),
+    'accent': var(--hsl-accent-color),   
+    'secondary-accent': var(--hsl-secondary-accent-color),
+    'success': var(--hsl-success-color),
+    'danger': var(--hsl-danger-color)
+  ),
+  'bg-gradient': (
+    'primary': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-primary-color), var(--gradient-opacity)),
+      hsl(var(--hsl-primary-color)), 
+      calc(var(--gradient-opacity) - .5)
+    ),
+    'secondary': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-secondary-color), var(--gradient-color)),
+      hsl(var(--hsl-secondary-color), 
+      calc(var(--gradient-opacity) - .5))
+    ),
+    'success': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-success-color), var(--gradient-color)),
+      hsl(var(--hsl-success-color), 
+      calc(var(--gradient-opacity) - .5))
+    ),
+    'accent': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-accent-color), var(--gradient-color)),
+      hsl(var(--hsl-accent-color), 
+      calc(var(--gradient-opacity) - .5))
+    ),
+    'secondary-accent': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-secondary-accent-color), var(--gradient-color)),
+      hsl(var(--hsl-secondary-accent-color), 
+      calc(var(--gradient-opacity) - .5))
+    ),
+    'danger': linear-gradient(
+      var(--gradient-deg),
+      hsl(var(--hsl-danger-color), var(--gradient-color)),
+      hsl(var(--hsl-danger-color), 
+      calc(var(--gradient-opacity) - .5))
+    )
+  ),
+  'bg-opacity': (
+    '0': 0,
+    '25': .25,
+    '50': .50,
+    '75': .75,
+    '100': 1
+  ),
+  'border-color': (
+    'primary': var(--hsl-primary-color),
+    'secondary': var(--hsl-secondary-color),
+    'accent': var(--hsl-accent-color),
+    'secondary-accent': var(--hsl-secondary-accent-color),
+    'success': var(--hsl-success-color),
+    'danger': var(--hsl-danger-color)
+  ),
+  'border-direction': (
+    'top': top, 
+    'right': right, 
+    'bottom': bottom, 
+    'left': left
+  ),
+  'border-size': (
+    '1': calc(var(--primary-border-size-point) * 1),
+    '2': calc(var(--primary-border-size-point) * 2),
+    '3': calc(var(--primary-border-size-point) * 3),
+    '4': calc(var(--primary-border-size-point) * 4),
+    '5': calc(var(--primary-border-size-point) * 5) 
+  ),
+  'border-style': (
+    'solid': solid,
+    'double': double,
+    'dotted': dotted,
+    'dashed': dashed,
+    'wavy': wavy
+  ),
+  'br': (
+    '1': calc(var(--primary-border-radius-point) * .25),
+    '2': calc(var(--primary-border-radius-point) * .375),
+    '3': calc(var(--primary-border-radius-point) * .5),
+    '4': calc(var(--primary-border-radius-point) * .7),
+    '5': calc(var(--primary-border-radius-point) * 1)
+  ),
+  'text-color': (
+    'primary': var(--hsl-primary-color),
+    'secondary': var(--hsl-secondary-color),
+    'accent': var(--hsl-accent-color),
+    'secondary-accent': var(--hsl-secondary-accent-color),
+    'success': var(--hsl-success-color),
+    'danger': var(--hsl-danger-color)
+  ),
+  'display': (
+    'none': none,
+    'inline': inline,
+    'block': block,
+    'inline-block': inline-block,
+    'flex': flex,
+    'inline-flex': inline-flex,
+    'grid': grid
+  ),
+  'user-select': (
+    'all': all,
+    'auto': auto,
+    'none': none
+  ),
+  'pointer-events': (
+    'all': all,
+    'auto': auto,
+    'none': none
+  ),
+  'underline-colors': (
+    'primary': var(--hsl-primary-color),
+    'secondary': var(--hsl-secondary-color),
+    'accent': var(--hsl-accent-color),
+    'secondary-accent': var(--hsl-secondary-accent-color),
+    'success': var(--hsl-success-color),
+    'danger': var(--hsl-danger-color)
+  ),
+  'underline-decoration-styles': (
+    'solid': solid,
+    'double': double,
+    'dotted': dotted,
+    'dashed': dashed,
+    'wavy': wavy
+  ),
+  'underline-offsets': (
+    '1': calc(var(--primary-underline-offset-point) * 1),
+    '2': calc(var(--primary-underline-offset-point) * 2),
+    '3': calc(var(--primary-underline-offset-point) * 3),
+    '4': calc(var(--primary-underline-offset-point) * 4),
+    '5': calc(var(--primary-underline-offset-point) * 5)
+  ),
+  'opacity': (
+    '0': 0,
+    '25': .25,
+    '50': .50,
+    '75': .75,
+    '100': 1
+  ),
+  'opacity-hover': (
+    '0': 0,
+    '25': .25,
+    '50': .50,
+    '75': .75,
+    '100': 1
+  ),
+  'position': (
+    'static': static,
+    'relative': relative,
+    'absolute': absolute,
+    'fixed': fixed,
+    'sticky': sticky
+  ),
+  'shadow': (
+    '1': 0 calc(var(--primary-shadow-point) * .125) 
+           calc(var(--primary-shadow-point) * .25) 
+           hsl(var(--hsl-primary-color), .75),
+    '2': 0 calc(var(--primary-shadow-point) * .5) 
+           calc(var(--primary-shadow-point) * .75) 
+           hsl(var(--hsl-primary-color), .75),
+    '3': 0 calc(var(--primary-shadow-point) * .55) 
+           calc(var(--primary-shadow-point) * 1) 
+           hsl(var(--hsl-primary-color), .75),
+    '4': 0 calc(var(--primary-shadow-point) * .75) 
+           calc(var(--primary-shadow-point) * 1.25) 
+           hsl(var(--hsl-primary-color), .75),
+    '5': 0 calc(var(--primary-shadow-point) * 1) 
+           calc(var(--primary-shadow-point) * 2) 
+           hsl(var(--hsl-primary-color), .75),
+  ),
+  'w': (
+    '0': calc(0 * 100%),
+    '25': calc(.25 * 100%),
+    '50': calc(.50 * 100%),
+    '75': calc(.75 * 100%),
+    '100': calc(1 * 100%)
+  ),
+  'h': (
+    '0': calc(0 * 100%),
+    '25': calc(.25 * 100%),
+    '50': calc(.50 * 100%),
+    '75': calc(.75 * 100%),
+    '100': calc(1 * 100%)
+  ),
+  'text-align': (
+    'start': start,
+    'center': center,
+    'end': end
+  ),
+  'text-wrap': (
+    'wrap': wrap,
+    'nowrap': nowrap
+  ),
+  'word-break': (
+    'normal': normal,
+    'break-all': break-all,
+    'keep-all': keep-all,
+    'break-word': break-word
+  ),
+  'text-transform': (
+    'lowercase': lowercase,
+    'uppercase': uppercase,
+    'capitalize': capitalize,
+  ),
+  'fz': (
+    '1': calc(var(--primary-font-size-point) * 2.5),
+    '2': calc(var(--primary-font-size-point) * 2),
+    '3': calc(var(--primary-font-size-point) * 1.75),
+    '4': calc(var(--primary-font-size-point) * 1.5),
+    '5': calc(var(--primary-font-size-point) * 1.25) 
+  ),
+  'font-weight': (
+    'lighter': lighter,
+    'light': light,
+    'normal': normal,
+    'medium': medium,
+    'bold': bold,
+    'bolder': bolder
+  ),
+  'font-style': (
+    'normal': normal,
+    'italic': italic
+  ),
+  'font': (
+    'primary': 'Roboto',
+    'monospace': 'Roboto Mono',
+  ),
+  'text-decoration': (
+    'underline': underline,
+    'line-through': line-through,
+    'none': none
+  ),
+  'margin-direction': (
+    'top': top, 
+    'right': right, 
+    'bottom': bottom, 
+    'left': left
+  ),
+  'margin-size': (
+    '1': calc(var(--primary-margin-point) * .25),
+    '2': calc(var(--primary-margin-point) * .5),
+    '3': calc(var(--primary-margin-point) * 1),
+    '4': calc(var(--primary-margin-point) * 1.5),
+    '5': calc(var(--primary-margin-point) * 3)
+  ),
+  'padding-direction': (
+    'top': top, 
+    'right': right, 
+    'bottom': bottom, 
+    'left': left
+  ),
+  'padding-size': (
+    '1': calc(var(--primary-paddint-point) * .25),
+    '2': calc(var(--primary-paddint-point) * .5),
+    '3': calc(var(--primary-paddint-point) * 1),
+    '4': calc(var(--primary-paddint-point) * 1.5),
+    '5': calc(var(--primary-paddint-point) * 3)
+  )
+);

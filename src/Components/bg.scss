@@ -1,0 +1,8 @@
+@use '../values' as *;
+
+@each $color-title, $color in map-get($util-values, 'bg') {
+  .bg-#{$color-title} {
+    --bg-color-opacity: 1;
+    background-color: hsla($color, var(--bg-color-opacity));
+  }
+}

@@ -1,0 +1,8 @@
+@use '../values' as *;
+
+@each $opacity-title, $opacity in map-get($util-values, 'bg-opacity') {
+  .bg-opacity-#{$opacity-title} {
+    --gradient-opacity: $opacity;
+    --bg-color-opacity: $opacity;
+  }
+}

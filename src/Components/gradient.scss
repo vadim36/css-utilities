@@ -1,0 +1,8 @@
+@use '../values' as *;
+
+@each $gradient-title, $gradient in map-get($util-values, 'bg-gradient') {
+  .bg-gradient-#{$gradient-title} {
+    --gradient-opacity: 1;
+    background-image: $gradient;
+  }
+}
